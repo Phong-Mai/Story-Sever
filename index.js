@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
@@ -25,6 +26,19 @@ mongoose
 const __dirname = path.resolve();
 
 const app = express();
+
+const allowedOrigins = [
+  'http://localhost:5173', // Replace with your frontend origin(s)
+  'https://your-production-domain.com' // Add production domains if needed
+];
+
+const corsOptions = {
+  origin: allowedOrigins,
+  credentials: true, // Allow cookies for authenticated requests (optional)
+  optionsSuccessStatus: 200 // Send a 200 response to preflight requests
+};
+
+app.use(cors(corsOptions)); 
 
 app.use(express.json());
 app.use(cookieParser());
