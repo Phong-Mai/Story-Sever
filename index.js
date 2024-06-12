@@ -29,7 +29,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173', // Replace with your frontend origin(s)
-  'https://your-production-domain.com' // Add production domains if needed
+  'https://story-client-seven.vercel.app' // Add production domains if needed
 ];
 
 const corsOptions = {
