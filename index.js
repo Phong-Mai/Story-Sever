@@ -34,8 +34,8 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: allowedOrigins,
-  credentials: true, // Allow cookies for authenticated requests (optional)
-  optionsSuccessStatus: 200 // Send a 200 response to preflight requests
+  // credentials: true, // Allow cookies for authenticated requests (optional)
+  // optionsSuccessStatus: 200 // Send a 200 response to preflight requests
 };
 
 app.use(cors(corsOptions)); 
