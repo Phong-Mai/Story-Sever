@@ -60,8 +60,8 @@ export const signin = async (req, res, next) => {
       .status(200)
       .cookie('access_token', token, {
         httpOnly: true,
-        secure: true,
-        domain: 'story-client-seven.vercel.app'
+        domain : '.vercel.app',
+        path : '/'
       })
       .json(rest);
   } catch (error) {
