@@ -30,8 +30,8 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173', // Replace with your frontend origin(s)
   'https://story-client-seven.vercel.app',
-  'story-client-git-main-phongs-projects-0ba40eb4.vercel.app',
-  'story-client-1cltf19ru-phongs-projects-0ba40eb4.vercel.app',
+  'https://story-sever-git-main-phongs-projects-0ba40eb4.vercel.app',
+  'https://story-sever-18znft58l-phongs-projects-0ba40eb4.vercel.app',
 ];
 
 const corsOptions = {
