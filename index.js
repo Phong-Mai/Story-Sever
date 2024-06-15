@@ -27,20 +27,20 @@ const __dirname = path.resolve();
 
 const app = express();
 
-// const allowedOrigins = [
-//   'http://localhost:5173', // Replace with your frontend origin(s)
-//   'https://story-client-seven.vercel.app',
-//   'https://story-sever-git-main-phongs-projects-0ba40eb4.vercel.app',
-//   'https://story-sever-18znft58l-phongs-projects-0ba40eb4.vercel.app',
-// ];
+const allowedOrigins = [
+  'http://localhost:5173', // Replace with your frontend origin(s)
+  'https://story-client-seven.vercel.app',
+  'https://story-sever-git-main-phongs-projects-0ba40eb4.vercel.app',
+  'https://story-sever-18znft58l-phongs-projects-0ba40eb4.vercel.app',
+];
 
-// const corsOptions = {
-//   origin: allowedOrigins,
-//   // credentials: true, // Allow cookies for authenticated requests (optional)
-//   // optionsSuccessStatus: 200 // Send a 200 response to preflight requests
-// };
+const corsOptions = {
+  origin: allowedOrigins,
+  // credentials: true, // Allow cookies for authenticated requests (optional)
+  // optionsSuccessStatus: 200 // Send a 200 response to preflight requests
+};
 
-// app.use(cors(corsOptions)); 
+app.use(cors(corsOptions)); 
 
 app.use(express.json());
 app.use(cookieParser());
