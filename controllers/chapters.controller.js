@@ -4,9 +4,9 @@ import snappy from 'snappy';
 
 export const create = async (req, res, next) => {
   const content = req.body.content
-  if (!req.user.isAdmin) {
-    return next(errorHandler(403, 'You are not allowed to create a post'));
-  }
+  // if (!req.user.isAdmin) {
+  //   return next(errorHandler(403, 'You are not allowed to create a post'));
+  // }
 //   if (!req.body.title || !req.body.content) {
 //     return next(errorHandler(400, 'Please provide all required fields'));
 //   }

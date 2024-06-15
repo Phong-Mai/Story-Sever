@@ -3,9 +3,9 @@ import { errorHandler } from '../utils/error.js';
 import snappy from 'snappy';
 
 export const create = async (req, res, next) => {
-  if (!req.user.isAdmin) {
-    return next(errorHandler(403, 'You are not allowed to create a post'));
-  }
+  // if (!req.user.isAdmin) {
+  //   return next(errorHandler(403, 'You are not allowed to create a post'));
+  // }
   if (!req.body.title) {
     return next(errorHandler(400, 'Please provide all required fields'));
   }
@@ -147,9 +147,9 @@ export const getstorychapter = async (req, res, next) => {
   }
 }
 export const deletepost = async (req, res, next) => {
-  if (!req.user.isAdmin || req.user.id !== req.params.userId) {
-    return next(errorHandler(403, 'You are not allowed to delete this post'));
-  }
+  // if (!req.user.isAdmin || req.user.id !== req.params.userId) {
+  //   return next(errorHandler(403, 'You are not allowed to delete this post'));
+  // }
   try {
     await Post.findByIdAndDelete(req.params.postId);
     res.status(200).json('The post has been deleted');
