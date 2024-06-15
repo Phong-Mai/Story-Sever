@@ -59,10 +59,10 @@ export const signin = async (req, res, next) => {
     res
       .status(200)
       .cookie('access_token', token, {
-        httpOnly: false,
-      domain: 'http://localhost:5173', 
-      secure: true,
-      sameSite: 'None' 
+        httpOnly: true,
+      // domain: 'https://story-client-seven.vercel.app', 
+      // secure: true,
+      // sameSite: 'None' 
       })
       .json(rest);
   } catch (error) {
