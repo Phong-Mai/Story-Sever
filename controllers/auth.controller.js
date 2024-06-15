@@ -60,7 +60,7 @@ export const signin = async (req, res, next) => {
       .status(200)
       .cookie('access_token', token, {
         httpOnly: true,
-      domain: 'https://story-client-seven.vercel.app', 
+      domain: 'https://story-client-seven.vercel.app/', 
       secure: true,
       sameSite: 'None' 
       })
