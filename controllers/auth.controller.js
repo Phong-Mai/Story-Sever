@@ -49,22 +49,22 @@ export const signin = async (req, res, next) => {
     if (!validPassword) {
       return next(errorHandler(400, 'Invalid password'));
     }
-    // const token = jwt.sign(
-    //   { id: validUser._id, isAdmin: validUser.isAdmin },
-    //   process.env.JWT_SECRET
-    // );
+    const token = jwt.sign(
+      { id: validUser._id, isAdmin: validUser.isAdmin },
+      process.env.JWT_SECRET
+    );
 
     const { password: pass, ...rest } = validUser._doc;
 
-    res.status(200).json(rest);
-      // .cookie('access_token', token, {
-      //   httpOnly: true,
-      // domain: 'https://story-client-seven.vercel.app', 
-      // secure: true,
-      // sameSite: 'None' 
-      // })
-     
-      req.user = { id: validUser._id, isAdmin: validUser.isAdmin }
+    res
+      .status(200)
+      .cookie('access_token', token, {
+        httpOnly: true,
+      domain: 'https://story-client-seven.vercel.app', 
+      secure: true,
+      sameSite: 'None' 
+      })
+      .json(rest);
   } catch (error) {
     next(error);
   }
