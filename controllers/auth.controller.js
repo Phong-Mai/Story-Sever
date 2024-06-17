@@ -56,16 +56,14 @@ export const signin = async (req, res, next) => {
 
     const { password: pass, ...rest } = validUser._doc;
 
-    // res
-    //   .status(200)
-    //   .cookie('access_token', token, {
-    //     httpOnly: true,
-    // domain: '.your-app.vercel.app', // Adjust based on your deployment target
-    // secure: true
-    //   })
-    //   .json(rest);
-      localStorage.setItem('access_token', token);
-       res.status(200).json(rest);
+    res
+      .status(200)
+      .cookie('access_token', token, {
+        httpOnly: true,
+    domain: '.your-app.vercel.app', // Adjust based on your deployment target
+    secure: true
+      })
+      .json(rest);
   } catch (error) {
     next(error);
   }
